@@ -1,11 +1,4 @@
-// Fixture data 
-Accounts.onLogin(function() {
-var mem =Meteor.users.findOne(Meteor.userId).memberships;
-var ber = _.map(mem, function(x){return new Meteor.Collection.ObjectID(  x._str)});
-var memberships = Members.find({'_id' : {$in : ber}}).fetch() ; 
-console.log(ber,memberships);
-});
-
+// Fixture data
 
 if (Posts.find().count() === 0) {
   var now = new Date().getTime();

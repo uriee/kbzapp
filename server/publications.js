@@ -39,21 +39,22 @@ Meteor.publish('singleProposal', function(id) {
 /*----------------kbz-----------------------*/
 Deps.autorun(function () {
   Meteor.publish('kbzs', function(options) {
-    return Kbz.find({'kbz_id' : {$in : Session.get('kbzs')}}, options);
+    console.log(userkbzs(this.userId));
+    var kbzs = 0;
+    if(this.userId) {
+      kbzs =  Kbz.find({'_id' : {$in : userkbzs(this.userId)}});
+    }
+    return kbzs;
   });
 });
 
-Deps.autorun(function () {
-  Meteor.publish('actions', function(options) {
-    return Kbz.find({'kbz_id' : {$in : Session.get('current_kbz_id')}}, options);
-  });
-});
 /*--------------members-------------------------*/
-Deps.autorun(function () {
-  Meteor.publish('kbz_members', function(options) {
-    return Members.find({'kbz_id' : {$in : Session.get('current_kbz_id')}}, options);
-  });
+
+Meteor.publish('kbz_members', function(kbz,options) {
+ // return Members.find({'kbz_id' : kbz}, options);
+  return Members.find({});
 });
+
 /*--------------statements-------------------------*/
 Deps.autorun(function () {
   Meteor.publish('kbz_statemenets', function(options) {
