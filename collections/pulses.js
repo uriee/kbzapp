@@ -1,0 +1,1 @@
+Pulses = new Meteor.Collection('pulses');
