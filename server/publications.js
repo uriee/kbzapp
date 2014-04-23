@@ -1,3 +1,7 @@
+Meteor.publish('users', function(postId) {
+  return Meteor.users.find({},{fields: {username: 1}});
+});
+
 Meteor.publish('posts', function(options) {
   return Posts.find({}, options);
 });
