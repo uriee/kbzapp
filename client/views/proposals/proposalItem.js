@@ -2,21 +2,23 @@ Template.proposalItem.helpers({
   ownProposal: function() {
     return this.initiator == Session.get(cmember.member_id);
   },
-  body: function() {
+  bodyx: function() {
     var a = document.createElement('a');
     a.href = this.url;
     return a.hostname;
   },
   upvotedClass: function() {
     var userId = Meteor.userId();
-    if (userId && member_id && !_.include(this.vote.for, Session.get(cmember.member_id))) {
+    var member_id = function() {
+      return Session('current_membership')._id
+    };
+    if (userId && member_id && !_.include(this.support.members, member_id)) {
       return 'btn-primary upvotable';
     } else {
       return 'disabled';
     }
   }
 });
-/*^^^^^^^^already proposeiolized^^^^^^^^^^^^^^^^^*/
 
 
 Template.postItem.rendered = function(){

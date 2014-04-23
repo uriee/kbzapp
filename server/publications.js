@@ -27,13 +27,13 @@ Deps.autorun(function () {
 });
 
 Deps.autorun(function () {
-  Meteor.publish('memberProposals', function(options) {
-    return Proposals.find({'kbz_id' : Session.get('current_kbz_id') , 'initiator' : query.member_id}, options);
+  Meteor.publish('memberProposals', function(member_id,options) {
+    return Proposals.find({'initiator' : query.member_id}, options);
   });
 });
 
 Meteor.publish('singleProposal', function(id) {
-  return id && Proposal.find(id);
+  return id && Proposals.findOne(id);
 });
 
 /*----------------kbz-----------------------*/

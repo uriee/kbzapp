@@ -1,26 +1,23 @@
 <template name="kbzs">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     Choose Kibutz
-    {{#if notificationCount}}
-      <span class="badge badge-inverse">{{notificationCount}}</span>
-    {{/if}}
     <b class="caret"></b>
   </a>
-  <ul class="notification dropdown-menu">
-    {{#if notificationCount}}
-      {{#each notifications}}
-        {{> notification}}
+  <ul class="dropdown-menu">
+    {{#if kbzs}}
+      {{#each kbzs}}
+        {{> kbzsrow}}
       {{/each}}
     {{else}}
-      <li><span>No Notifications</span></li>
+      <li><span>No Memberships</span></li>
     {{/if}}
   </ul>
 </template>
 
-<template name="notification">
+<template name="kbzsrow">
   <li>
-    <a href="{{notificationPostPath}}">
-      <strong>{{commenterName}}</strong> commented on your post
+    <a href="{{kbzsDashPath}}">
+      <strong>{{variables.Name.value}}</strong> 
     </a>
   </li>
 </template>

@@ -1,8 +1,7 @@
 Proposals = new Meteor.Collection('proposals');
 
 Proposals.allow({
-  update: ownsProposal,
-  remove: ownsProposal
+   remove: ownsProposal
 });
 
 Proposals.deny({
