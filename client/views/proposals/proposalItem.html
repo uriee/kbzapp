@@ -5,6 +5,7 @@
       <h3><a href="{{url}}">{{title}}</a><span>{{body}}</span><span>{{status}}</span><span>{{type}}</span></h3>
       <p>
         {{pluralize votes "Vote"}},
+        support: {{support.count}}, votes: {{votes.pro}},{{votes.against}}, age: {{age}}
         submitted by {{author}},
         <a href="{{pathFor 'proposalPage'}}">{{pluralize commentsCount "comment"}}</a>
         {{#if ownPost}}<a href="{{pathFor 'proposalEdit'}}">Edit</a>{{/if}}

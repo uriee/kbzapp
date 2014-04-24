@@ -9,12 +9,6 @@
       <a class="brand" href="{{pathFor 'home'}}">Microscope</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="{{activeRouteClass 'allProposals'}}">
-            <a href="{{pathFor 'allProposals'}}">Proposals</a>
-          </li>
-          <li class="{{activeRouteClass 'membersListController'}}">
-            <a href="{{pathFor 'membersListController'}}">Members</a>
-          </li>          
           <li class="{{activeRouteClass  'bestPosts'}}">
             <a href="{{pathFor 'bestPosts'}}">Best</a>
           </li>
@@ -28,6 +22,18 @@
             <li class="dropdown">
               {{> kbzs}}
             </li>
+          <li class="{{activeRouteClass 'allProposals'}}">
+            <a href="{{pathFor 'allProposals'}}">Proposals</a>
+          </li>
+          <li class="{{activeRouteClass 'membersListController'}}">
+            <a href="{{pathFor 'membersListController'}}">Members</a>
+          </li> 
+          <li class="{{activeRouteClass 'statementsListController'}}">
+            <a href="{{pathFor 'statementsListController'}}">Statements</a>
+          </li>          
+          <li class="{{activeRouteClass 'variablesListController'}}">
+            <a href="{{pathFor 'variablesListController'}}">Variables</a>
+          </li>            
           {{/if}}
         </ul>
         <ul class="nav pull-right">

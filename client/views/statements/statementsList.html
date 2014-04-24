@@ -1,0 +1,11 @@
+<template name="statementsList">
+  <div class="posts">
+    {{#each statementsList}}
+      {{> statementItem}}
+    {{/each}}
+    
+    {{#if nextPath}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
+    {{/if}}
+  </div>
+</template>

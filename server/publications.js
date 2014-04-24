@@ -60,8 +60,6 @@ Meteor.publish('kbz_members', function(kbz,options) {
 });
 
 /*--------------statements-------------------------*/
-Deps.autorun(function () {
-  Meteor.publish('kbz_statemenets', function(options) {
-    return Statements.find({'kbz_id' : {$in : Session.get('current_kbz_id')}}, options);
-  });
+Meteor.publish('kbz_statemenets', function() {
+  return Statements.find({});
 });
